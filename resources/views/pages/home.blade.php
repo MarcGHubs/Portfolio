@@ -47,12 +47,12 @@
                 </div>
 
                 <div class="hero-description-card">
-               <p>
-    Building <span class="accent">Smart Web & Mobile Systems</span> that blend 
-    <span class="accent">Real-Time Technology</span>, 
-    <span class="accent">AI Integration</span>, and 
-    <span class="accent">Modern User Experience</span>.
-</p>
+                    <p>
+                        Building <span class="accent">Smart Web & Mobile Systems</span> that blend 
+                        <span class="accent">Real-Time Technology</span>, 
+                        <span class="accent">AI Integration</span>, and 
+                        <span class="accent">Modern User Experience</span>.
+                    </p>
                     <div class="btn-group">
                         <a href="#projects" class="tactical-btn">
                             <span class="btn-label">DATA_ARCHIVE</span>
@@ -137,10 +137,10 @@
         <div class="tactical-ledger">
             @php 
                 $projects = [
-                    ['01', 'SAN PEDRO RESPONDER', 'AI / Real-time', 'splr.png', 'Mission-critical GPS response ecosystem.'],
+                    ['01', 'SP RESPONDER', 'AI / Real-time', 'splr.png', 'Mission-critical GPS response ecosystem.'],
                     ['02', 'YATACAFE POS', 'Laravel / SQL', 'yat.png', 'High-traffic inventory orchestration.'],
-                    ['03', 'SIGNEASE AI - MOBILE', 'Vision AI', 'sign.png', 'ASL translation via TensorFlow.'],
-                    ['04', 'BARD WITHIN THE DUNGEON', 'Unity / C#', 'bard.png', '3D Odyssey with portal mechanics.'],
+                    ['03', 'SIGNEASE AI', 'Vision AI', 'sign.png', 'ASL translation via TensorFlow.'],
+                    ['04', 'BARD RPG', 'Unity / C#', 'bard.png', '3D Odyssey with portal mechanics.'],
                     ['05', 'TANTEI HIGH', 'Unity 6', 'tantei.png', 'PC Mystery / Environmental logic.'],
                 ];
             @endphp
@@ -174,26 +174,19 @@
                 <div class="shell-dots"><span></span><span></span><span></span></div>
                 <div class="shell-title">COMMS_PROTOCOL.SH</div>
             </div>
-      <div class="shell-body">
-
-    <h2 class="terminal-h">INITIATE_COLLABORATION</h2>
-
-    <p>
-        Ready to build intelligent web systems, real-time Android applications,
-        and immersive game experiences.
-    </p>
-
-    <div class="terminal-action">
-
-        <span class="prompt">></span>
-
-        <a href="https://www.facebook.com/marcyyyvillanueva" target="_blank" class="blink-link">
-            CONNECT_WITH_ME
-        </a>
-
-    </div>
-
-</div>
+            <div class="shell-body">
+                <h2 class="terminal-h">INITIATE_COLLABORATION</h2>
+                <p>
+                    Ready to build intelligent web systems, real-time Android applications,
+                    and immersive game experiences.
+                </p>
+                <div class="terminal-action">
+                    <span class="prompt">></span>
+                    <a href="https://www.facebook.com/marcyyyvillanueva" target="_blank" class="blink-link">
+                        CONNECT_WITH_ME
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -210,6 +203,18 @@
 
     body { background: var(--bg); color: #fff; font-family: 'Space Mono', monospace; overflow-x: hidden; }
 
+    /* --- SCROLL PROGRESS --- */
+    #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: var(--red);
+        z-index: 2000;
+        width: 0%;
+        box-shadow: 0 0 10px var(--red);
+    }
+
     /* --- ENHANCED DYNAMIC ISLAND MORPH --- */
     #nav-wrapper {
         position: fixed;
@@ -219,12 +224,12 @@
         display: flex;
         justify-content: center;
         z-index: 1000;
-        pointer-events: none; /* Clicking through to hero */
+        pointer-events: none;
     }
 
     #tactical-nav { 
         width: 100%;
-        max-width: 100%; /* Switch to max-width for smoother sub-pixel rendering */
+        max-width: 100%;
         padding: 25px 0; 
         background: rgba(0,0,0,0);
         transition: 
@@ -241,7 +246,7 @@
 
     #tactical-nav.scrolled {
         top: 20px;
-        max-width: 580px; /* Precise target width for the "Island" */
+        max-width: 580px; 
         padding: 12px 25px;
         background: rgba(10, 10, 10, 0.75);
         backdrop-filter: blur(25px) saturate(1.5);
@@ -252,7 +257,7 @@
     }
 
     #tactical-nav.scrolled:hover {
-        max-width: 600px; /* Subtle growth effect */
+        max-width: 600px;
         background: rgba(15, 15, 15, 0.9);
         border-color: var(--red);
     }
@@ -268,10 +273,7 @@
         transition: all 0.5s ease;
     }
 
-    #tactical-nav.scrolled .nav-content {
-        padding: 0; 
-        max-width: 100%;
-    }
+    #tactical-nav.scrolled .nav-content { padding: 0; max-width: 100%; }
 
     .nav-logo { font-family: 'Syncopate'; font-weight: 700; color: #fff; letter-spacing: 2px; font-size: 0.8rem; }
     .nav-links { display: flex; gap: 30px; align-items: center; transition: gap 0.5s ease; }
@@ -283,7 +285,7 @@
     .nav-cta { border: 1px solid var(--red); padding: 8px 18px; color: #fff !important; border-radius: 30px; background: transparent; transition: 0.3s ease !important; }
     .nav-cta:hover { background: var(--red); color: #000 !important; }
 
-    /* --- CORE STYLES --- */
+    /* --- HERO STYLES --- */
     .section-container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
     .content-section { padding: 120px 0; position: relative; }
     .darker { background: #050505; }
@@ -298,7 +300,7 @@
     @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     
     .hero-pre { font-size: 0.8rem; color: var(--red); opacity: 0.8; }
-    .glitch-name { font-family: 'Syncopate'; font-size: clamp(3rem, 8vw, 6rem); margin: 0; line-height: 0.9; letter-spacing: -5px; }
+    .glitch-name { font-family: 'Syncopate'; font-size: clamp(3rem, 8vw, 6rem); margin: 0; line-height: 0.9; letter-spacing: -5px; position: relative; }
     
     .tagline-marquee { white-space: nowrap; overflow: hidden; background: var(--red); color: #000; font-weight: bold; font-size: 0.6rem; padding: 4px 0; margin-top: 15px; width: 80%; }
     
@@ -325,6 +327,7 @@
     .s-val { display: block; font-family: 'Syncopate'; font-size: 1.5rem; color: var(--red); }
     .s-label { font-size: 0.55rem; color: #444; letter-spacing: 2px; margin-top: 5px; }
 
+    /* --- ARCHIVE GRID --- */
     .dual-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; }
     .entry-num { color: var(--red); font-family: 'Syncopate'; font-size: 1rem; }
     .section-title { font-family: 'Syncopate'; font-size: 2.5rem; margin-top: 10px; letter-spacing: -2px; }
@@ -333,21 +336,26 @@
     .spec-column ul { list-style: none; padding: 0; }
     .spec-column li { color: #888; margin-bottom: 12px; font-size: 0.9rem; border-left: 1px solid #222; padding-left: 15px; }
 
+    /* --- TACTICAL LEDGER --- */
     .ledger-header { margin-bottom: 60px; }
     .simple-title { font-family: 'Syncopate'; font-size: 1.5rem; }
     .red-text { color: var(--red); }
-    .ledger-row { display: grid; grid-template-columns: 50px 1fr 150px 120px; align-items: center; padding: 30px; border-bottom: 1px solid var(--border); transition: 0.3s; text-decoration: none; color: inherit; }
-    .ledger-row:hover { background: rgba(255,255,255,0.02); }
+    .ledger-row { display: grid; grid-template-columns: 50px 1fr 150px 120px; align-items: center; padding: 30px; border-bottom: 1px solid var(--border); transition: 0.3s; text-decoration: none; color: inherit; position: relative; overflow: hidden; }
+    .ledger-row:hover { background: rgba(255, 255, 255, 0.03); }
+    .ledger-row::before { content: ""; position: absolute; left: 0; top: 0; height: 100%; width: 2px; background: var(--red); transform: scaleY(0); transition: 0.3s; }
+    .ledger-row:hover::before { transform: scaleY(1); }
+
     .r-num { color: var(--red); font-size: 0.8rem; font-weight: bold; }
     .r-top { display: flex; align-items: center; }
     .r-top h3 { font-family: 'Syncopate'; margin: 0; font-size: 1.2rem; }
     .r-tag { font-size: 0.6rem; color: #555; text-transform: uppercase; border: 1px solid #222; padding: 2px 8px; margin-left: 15px; }
     .r-desc { color: #666; font-size: 0.85rem; margin: 10px 0 0 0; }
-    .r-visual img { width: 120px; height: 60px; object-fit: cover; opacity: 0.2; filter: grayscale(1); transition: 0.5s; border: 1px solid #333; }
+    .r-visual img { width: 120px; height: 60px; object-fit: cover; opacity: 0.1; filter: grayscale(1); transition: 0.5s; border: 1px solid #333; }
     .ledger-row:hover .r-visual img { opacity: 0.8; filter: grayscale(0); border-color: var(--red); }
-    .view-link { font-size: 0.6rem; color: #444; text-decoration: none; border: 1px solid #333; padding: 8px; text-align: center; font-family: 'Syncopate'; }
-    .view-link:hover { color: var(--red); border-color: var(--red); }
+    .view-link { font-size: 0.6rem; color: #444; text-decoration: none; border: 1px solid #333; padding: 8px; text-align: center; font-family: 'Syncopate'; transition: 0.3s; }
+    .view-link:hover { color: var(--red); border-color: var(--red); background: var(--red-low); }
 
+    /* --- TERMINAL --- */
     .terminal-shell { background: #080808; border: 1px solid #222; max-width: 800px; margin: 0 auto; overflow: hidden; }
     .shell-bar { background: #111; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #222; }
     .shell-dots { display: flex; gap: 8px; }
@@ -360,6 +368,7 @@
     .blink-link { color: #fff; text-decoration: none; border-bottom: 2px solid var(--red); padding-bottom: 5px; font-family: 'Syncopate'; font-size: 0.8rem; }
     .blink-link:hover { background: var(--red); color: #000; }
 
+    /* --- BACKGROUND FX --- */
     .bg-fx-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; overflow: hidden; background: #000; }
     .grid-floor { position: absolute; width: 200%; height: 200%; background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 50px 50px; transform: rotateX(60deg); bottom: -50%; left: -50%; transition: transform 0.1s ease-out; }
     .vignette { position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, transparent 20%, #000 90%); pointer-events: none; }
@@ -368,17 +377,70 @@
 
     .accent { color: var(--red); }
 
+    /* --- RESPONSIVE UPDATES --- */
     @media (max-width: 992px) {
-        .hero-main-layout, .dual-grid { grid-template-columns: 1fr; display: block; }
+        .hero-main-layout, .dual-grid { display: flex; flex-direction: column; gap: 40px; }
+        .hero-header { height: auto; padding: 140px 0 60px 0; }
         .hero-visual-col { margin-top: 50px; }
         .hud-container { width: 280px; height: 350px; margin: 0 auto; }
-        .ledger-row { grid-template-columns: 40px 1fr 100px; }
+        
+        /* Fixed Project Ledger for Mobile */
+        .ledger-row { 
+            grid-template-columns: 40px 1fr auto; 
+            padding: 20px 15px; 
+            gap: 15px;
+        }
+        .r-top h3 { font-size: 1rem; }
         .r-visual { display: none; }
+        .r-tag { display: none; } /* Hide tag on small screens to save space */
+        
+        /* Terminal Mobile Fix */
+        .shell-body { padding: 40px 25px; }
+        .terminal-h { 
+            font-size: 1.4rem; 
+            line-height: 1.2;
+            word-wrap: break-word; /* Prevents overflow */
+            overflow-wrap: anywhere; 
+        }
+        
         #tactical-nav.scrolled { max-width: 90%; }
+        
+        /* Footer stats fix */
+        .hero-footer-stats {
+            position: relative;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .stat-block { 
+            padding: 15px; 
+            flex: 1 1 33%;
+            border-bottom: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+        .s-val { font-size: 1.1rem; }
+    }
+
+    /* Small Phone adjustments */
+    @media (max-width: 480px) {
+        .glitch-name { font-size: 3.2rem; letter-spacing: -2px; }
+        .section-title { font-size: 1.8rem; }
+        .nav-links { display: none; } /* Hiding crowded nav on tiny phones */
+        .nav-content { justify-content: center; }
+        .hero-description-card p { font-size: 0.95rem; }
+        .tagline-marquee { width: 100%; }
     }
 </style>
 
 <script>
+    // Scroll Progress Logic
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progress = document.getElementById("scroll-progress");
+        if(progress) progress.style.width = scrolled + "%";
+    });
+
     const nav = document.getElementById('tactical-nav');
     
     // Smooth Scroll Trigger for Island Morph
@@ -390,21 +452,24 @@
         }
     });
 
-    // Parallax Grid Effect
-    window.addEventListener('mousemove', (e) => {
-        const x = (window.innerWidth / 2 - e.pageX) / 45;
-        const y = (window.innerHeight / 2 - e.pageY) / 45;
-        const grid = document.querySelector('.grid-floor');
-        if(grid) {
-            grid.style.transform = `rotateX(60deg) translateX(${x}px) translateY(${y}px)`;
-        }
-    });
+    // Parallax Grid Effect (Only on Desktop for performance)
+    if (window.innerWidth > 992) {
+        window.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth / 2 - e.pageX) / 45;
+            const y = (window.innerHeight / 2 - e.pageY) / 45;
+            const grid = document.querySelector('.grid-floor');
+            if(grid) {
+                grid.style.transform = `rotateX(60deg) translateX(${x}px) translateY(${y}px)`;
+            }
+        });
+    }
 
     // Smooth anchor navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => { 
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
             if(target) {
                 target.scrollIntoView({
                     behavior: 'smooth'
