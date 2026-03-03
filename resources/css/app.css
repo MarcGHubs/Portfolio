@@ -1,0 +1,135 @@
+:root {
+    --bg-dark: #050505;
+    --card-dark: #0f0f0f;
+    --accent-red: #ff3c3c;
+    --accent-glow: rgba(255, 60, 60, 0.4);
+    --text-white: #e0e0e0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* --- Hero Animations --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, #1a0505 0%, #050505 100%);
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    border: 2px solid var(--accent-red);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: rotate(-3deg);
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile-img:hover {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.glitch-text {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin: 20px 0;
+    color: white;
+    text-shadow: 2px 2px var(--accent-red);
+}
+
+/* --- Interactive Cards --- */
+.interactive-card {
+    background: var(--card-dark);
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+.interactive-card:hover {
+    border-color: var(--accent-red);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 60, 60, 0.1);
+}
+
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.interactive-card:hover .card-glow {
+    opacity: 0.3;
+}
+
+/* --- Section Styling --- */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::after {
+    content: "";
+    height: 2px;
+    flex-grow: 1;
+    background: linear-gradient(to right, var(--accent-red), transparent);
+    margin-left: 20px;
+}
+
+.tag {
+    color: var(--accent-red);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background: #1a1a1a;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    border: 1px solid #333;
+}
+
+/* --- Skill Matrix --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skill-item {
+    background: #111;
+    padding: 15px;
+    border-left: 3px solid var(--accent-red);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.skill-item:hover {
+    background: var(--accent-red);
+    color: black;
+}
