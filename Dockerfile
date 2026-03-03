@@ -21,10 +21,17 @@ WORKDIR /var/www/html
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 RUN composer install --no-dev
 
-# Clean install of NPM packages to fix the Tailwind binding error
+# Fix SQLite: Create the folder and the file
+RUN mkdir -p database && touch database/database.sqlite
+
+# Clean install of NPM packages
 RUN rm -rf node_modules package-lock.json \
     && npm install \
     && npm run build
 
-# 5. Permissions
-RUN chown -R www-data:www-data storage bootstrap/cache
+# 5. Permissions (Crucial for SQLite)
+# We must make the database folder and file writable by the web server
+RUN chown -R www-data:www-data /var/www/html/storage \
+    /var/www/html/bootstrap/cache \
+    /var/www/html/database
+RUN chmod -R 775 /var/www/html/storage /var/www/html/database
